@@ -1,0 +1,19 @@
+#!/bin/bash
+#SBATCH --job-name="som_mpas"
+#SBATCH --output="som_mpas.%j.%N.out"
+#SBATCH --partition=compute
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --export=ALL
+#SBATCH -t 24:00:00
+#SBATCH --mail-user=legetker@ncsu.edu  
+#SBATCH --mail-type=BEGIN
+#SBATCH --mail-type=END
+
+#Define user environment
+source /home/lgetker/aliases.sh
+module purge 
+conda activate /home/lgetker/research_env/envs/lauren-jupyter
+
+
+python mpas_som.py
