@@ -154,9 +154,9 @@ plt.savefig("mpas_data_dims_test.png", bbox_inches = 'tight')
 """
 Train SOM
 """
-SOM = blossom(da_sub, 3, 3)
-SOM.make_SOM()
-som_data = SOM.comp_data
+SOM = blossom(da_sub, rows, cols) #create blossom object
+SOM.train_SOM() #train SOM
+SOM.save_SOM() #save composites as netCDF
 """
 Visualization. You'll want to change some things here, such as plot titles, contour levels, and map extent!
 """
