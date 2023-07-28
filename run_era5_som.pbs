@@ -1,0 +1,17 @@
+#!/bin/bash
+#PBS -N era_som
+### Project code
+#PBS -A uncs0044
+#PBS -l walltime=12:00:00
+#PBS -q regular
+### Merge output and error files
+#PBS -j oe
+#PBS -k eod
+#PBS -l select=1 
+
+export TMPDIR=/glade/scratch/$USER/temp
+mkdir -p $TMPDIR
+module load conda
+conda activate my-clone
+
+python ERA5_SOM.py
