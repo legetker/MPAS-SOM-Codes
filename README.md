@@ -6,9 +6,11 @@ The blossom.py program formats the data, and then uses the minisom.py package to
 The blossom_settings.json5 file must be edited to change SOM hyperparameters. To change something, you should edit the value following the colon. For instance, if I wanted to change the iterations, I would start with:
 
 //How many times the SOM should iterate
+
 "num_iteration": 100000,
 
 Maybe I want the SOM to perform 100 iterations. So I would change to:
 
 //How many times the SOM should iterate
+
 "num_iteration": 100,
