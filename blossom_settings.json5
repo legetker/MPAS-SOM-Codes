@@ -2,10 +2,10 @@
     //Initial learning rate (at the iteration t we have learning_rate(t) = learning_rate / (1 + t/T) where T is #num_iteration/2)
     "learning_rate": .3,
 
-    //The decay function used
+    //Function that reduces learning_rate and sigma at each iteration. The default function is: learning_rate / (1+t/(max_iterarations/2))
     "decay_function": "asymptotic_decay",
 
-    //Neighborhood function
+    //Function that weights the neighborhood of a position in the map. Possible values: 'gaussian', 'mexican_hat', 'bubble', 'triangle'
     "neighborhood_function": "gaussian",
 
     //Topology of the map; Possible values: 'rectangular', 'hexagonal'
@@ -20,10 +20,10 @@
     //How many times the SOM should iterate. Was 100000, reduced while experimenting (GL)
     "num_iteration": 100000,
 
-    //
+    //If True, samples are picked in random order. Otherwise the samples are picked sequentially.
     "random_order": "True",
 
-    //
+    // If True the status of the training will be printed each time the weights are updated.
     "verbose": "True",
     
     //Spread of the neighborhood function, needs to be adequate to the dimensions of the map. Use value 0 to automatically calculate to the largest possible value
